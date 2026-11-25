@@ -1,0 +1,26 @@
+# Start confirmation
+
+Use the stable interaction language selected by SKILL.md: an explicit reply-language request takes precedence over the clearly available host response-language setting (including Codex), then the saved interaction locale, then English. Apply this before the initial announcement. The user's message text, attachment names, source dialogue, numeric confirmations, and target video language do not switch the chat language.
+
+Show one localized confirmation before uploading the source video, editing/generating an image, or submitting a video task. Reply 1 authorizes the source/storyboard uploads, server analysis with at most one retry after a clear terminal failure, image processing, and the first video generation. Other paid retries require fresh authorization. Keep the existing task's authorized scope; language changes do not require another confirmation.
+
+The confirmation card MUST be a three-column Markdown table: setting, current selection, and available options. Available options MUST be the rightmost column, with a concrete list in every setting row, including Other requirements. Translate the column heading and every option to the selected interaction language. Do not omit the options column or replace it with prose below the table.
+
+Use the following fields and numeric choices, translated into the selected interaction language. The English table is an example for rendering in any configured language. Fill selections from the user's request and source facts. Do not infer target video language from chat language or filenames. Do not add API keys, login status, upload details, or implementation steps to the card.
+
+| Setting | Current selection | Options |
+|---|---|---|
+| Product | Keep source unless product images are supplied | Keep source / use supplied product images |
+| Creator | AI generated creator | AI generated creator (default) / keep source creator / use supplied creator images |
+| Video model | Seedance 2 Mini | Mini / Fast / Seedance 2 / Seedance 2.5 / MiniMax H3 / Wan 3 / Omini |
+| Duration | Same as source | Source / custom positive whole seconds, no longer than source or 360 seconds |
+| Target country | Same as source | Source / specify country or region |
+| Target language | Same as source | Source / specify video language |
+| Other requirements | None | None / user-specified |
+
+Reply with a number:
+1. Confirm and start
+2. Change requirements
+
+Reply 1 starts the confirmed configuration. Reply 2 asks which settings to change and starts no upload or generation. Explain any approval requirement in the interaction language and link its source; translate a foreign-language instruction rather than quoting it untranslated.
+Pass the selected creator mode into `generation_manifest.mjs init --creator-mode <mode>`; omit the flag for the default `ai_generated`. The same initial confirmation authorizes its first identity sheet task, with no second creator confirmation.

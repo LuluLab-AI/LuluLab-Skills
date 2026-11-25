@@ -1,0 +1,106 @@
+## 1.4.0 — Dispatcher parent tasks (2026-11-02)
+
+- New full-video tasks use the same parent IDs and input contracts as the frontend: StoryboardRecreationV1, DeepRecreationV1 (pipeline v2), ElementReplacementV1.
+- Added offline plan, Asset upload, billing quote + single submit, persistent parent polling and final-video download.
+- Preserved legacy manifest recovery and prompt-only export; no automatic migration or duplicate paid submission.
+- Match frontend replacement defaults: no person image means keep the source person.
+
+## 1.3.7 — Segment 就绪即推进（2026-10-15）
+
+- 抽帧新增逐段就绪输出和单段选择；AI 身份板与抽帧可同时运行，先就绪段直接交接图片编辑。
+- 图片、Prompt、视频提交继续复用现有 CLI 和 Manifest；新任务禁止原始板代替目标板进入 Prompt。
+- Manifest 读改写加跨进程锁，视频状态更新保留其他 Segment；Fast 模式继续机械质检。
+- 保留旧 Manifest 兼容、原模型与任务恢复，不增加付费模型调用。
+
+## 1.3.6 — Sync with recreate-video-agent (2026-10-15)
+
+- Align segment handoff, prompt language, full creator replacement, and caption postproduction with recreate-video-agent 1.3.6.
+- Keep LuluLab Node.js CLI as the sole analysis, image, and video service channel; preserve its task recovery and media upload behavior.
+- Verify with host preflight, 182 local tests, and package validation. No paid tasks were submitted.
+
+## 1.3.1 — Skill rename (2026-10-14)
+
+- Rename the installed Skill, frontmatter, invocation, metadata, source folder and installation instructions to `LuluLab-Recreate-Video`.
+- Retain the former Skill identifier only as a legacy manifest compatibility value so interrupted tasks can still resume.
+- Keep the existing image, video, billing and internationalization behavior unchanged.
+
+## 1.3.0 — AI creator identity sheet (2026-10-14)
+
+- Default new tasks to AI generated creators, with explicit keep-source and user-provided modes; historical manifests retain their established choice.
+- Generate one reusable, realistic 2×2 four-view identity sheet per selected target creator through the existing LuluLab ImageGenV2 CLI path. Persist its task ID, input fingerprint, file hash and review state; never automatically resubmit an uncertain or failed paid task.
+- Bind reviewed AI sheets to storyboard editing and VideoGenV2 references, including single-segment tasks. Save image-edit reference hashes and verify the storyboard used the same sheet. Keep user uploads in every relevant video request and audit them before submission.
+- Refresh Skill and installation guidance; verify with local and mock tests only. No paid generation was performed.
+
+## 1.2.1 — Uploaded reference integrity and host compatibility (2026-10-14)
+
+- Correct GitHub installation URLs while retaining `recreate-video-agent` as the Skill name.
+- Register user uploads independently of replacement decisions; audit every segment's VideoGenV2 references before paid submission, including preserve-original tasks.
+- Reuse SHA256-keyed reference uploads when media remains valid, fingerprint dependent stages, and cap existing submit/poll concurrency.
+- Add portable host capability preflight and Mock CLI regression tests. No paid generation was run.
+
+## 1.2.0 — GitHub installation and portable CLI candidate (2026-10-10)
+
+- Preserve the source workflow and task recovery rules while routing LuluLab task, upload and credit commands through the bundled Node.js client.
+- Add English and Chinese installation guides and update the Windows CLI guidance.
+- Preserve the existing English/Chinese interaction rules; no production paid task has been run for this candidate.
+
+## 1.1.5 — LuluLab 图片模型切换（2026-10-09）
+
+- 图片生成与编辑仍使用 LuluLab CLI 的 ImageGenV2，模型改为 `gpt-image-2-5-sunburst`，分辨率保持 1K。
+- 同步更新技能说明、工作流契约与提交测试。
+
+## 1.1.4 — LuluLab共用生成协议（2026-10-08）
+
+- 用户确认除CLI名称外契约不变；从原二进制核对ImageGenV2、VideoGenV2并内置。
+- 图片image2、视频Seedance2 Mini均使用LuluLab通用任务，参考图先上传为媒体对象。
+- 当前任务显式指定LuluLab时不检测或调用其他渠道。
+- 继续保留taskId、重复提交门禁、恢复查询和视频预处理修复。
+
+## 1.1.3 — 客户端安装修订（2026-10-08）
+
+- 按用户确认，工作流由LuluLab CLI自动触发，客户端只负责上传、提交、查询及消费结果。
+- 移除服务端工作流JSON、服务端JS及对应的服务端实现测试，不要求导入或部署工作流。
+- 保留131项客户端回归测试。
+
+## 1.1.2 — LuluLab CLI 迁移（2026-10-08）
+
+- 内置客户提供的 LuluLab CLI 0.0.2：macOS arm64、Windows x64，更新安装路径与 SHA256。
+- 拆解鉴权改为 user --credits；保留 task submit/fetch、upload、预处理、排他锁和恢复规则。
+- 配置改为 LULULAB_CLI、LULULAB_API_KEY 与独立 .recreate-video-lululab/config.json。
+- LuluLab 0.0.2 不提供 image/video；图片按文档schema接入可配置的通用task（需LULULAB_IMAGE_WORKFLOW_ID）；阻断未提供协议的视频生成入口，保留其他三个视频CLI。
+- 拆解沿用V3及原输入与结果协议。
+
+## 原版历史（以下记录来自附件，仅代表迁移前版本）
+
+## 1.1.1 兼容修复包 — 2026-10-08
+
+- 修复custom前N秒只写入提示、没有实际裁剪的问题，source模式保留全片及整数秒目标语义。
+- 新增独立临时目录、FFmpeg同步精确裁剪、ffprobe和完整解码校验，裁剪后再按原20,000,000字节限制压缩。
+- 直链执行公共IP校验、固定IP连接、安全下载、裁剪和上传，限制重定向、大小及超时。
+- 保留原始sourceDuration和Planner/Webhook协议，analysisDuration仅在本地保存，过滤区间外候选切点。
+- 增加真实媒体、并发和下载安全回归测试；不修改Gemini、Blueprint、生成模型、积分和替换逻辑。
+
+## 1.1.1 — 2026-09-29
+
+- 图片生成与编辑优先使用智能体原生能力；当前会话无该能力时，使用灵智工坊 `gpt-image-2` 1K 兜底。
+- 新增可持久化 taskId、恢复查询与结果下载的灵智图片生成入口。
+- 视频生成顺序扩展为 LibTV → 小云雀 → 即梦 → 灵智工坊，并保留 provider 锁定与禁止重复付费提交的规则。
+- 补充图片、视频兜底的回归测试，并通过真实灵智CLI图片与5秒视频冒烟测试。
+
+## 1.0.2 — 2026-09-18
+
+- LibTV 逻辑模型 ID 和 modelKey 自动映射为 CLI 展示名，并在提交前查询校验。
+- 未指定工作区时自动创建工作区，兼容 `projectMeta.uuid` 画布返回结构。
+- Skill 标题无法提供版本时回退读取 frontmatter；SkillHub `1.x.y` 包版本按当前工作流能力处理。
+- Storyboard 时间戳文件同时支持 JSON 和每行一个数字的纯文本。
+- 保留当前安装版内置的 macOS ARM64 与 Windows x64 LZStudio CLI `0.0.5`。
+- 增加上述修复的针对性回归测试，并更新受版本策略影响的旧测试夹具。
+
+## 1.0.1 — 基线
+
+人物与商品身份绑定版复刻工作流。
+
+### 调用恢复修复
+- 新任务默认 image2 / Seedance2 Mini，LuluLab 任务接口统一提交、查询与媒体解析。
+- 旧 manifest 的 auto 路由也固定 LuluLab；CLI 不可用时保留素材并报错。
+- 图片与视频排他锁、提交前持久记录；查询/下载错误仅恢复原 ID，终态失败不自动重提。
