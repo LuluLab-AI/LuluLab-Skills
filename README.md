@@ -16,7 +16,7 @@
 | [去除字幕](Lululab-video-subtitle-remover/SKILL.md) | 画布、浏览器 | 1.0.0 | [下载 ZIP](https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/releases/download/v1.1.0/Lululab-video-subtitle-remover-v1.0.0.zip) |
 | [去除水印](Lululab-video-watermark-remover/SKILL.md) | 画布、浏览器 | 1.0.0 | [下载 ZIP](https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/releases/download/v1.1.0/Lululab-video-watermark-remover-v1.0.0.zip) |
 
-按需下载单个 ZIP，或[下载全部 11 个技能](https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/releases/download/v1.1.0/LuluLab-Skills-v1.1.0.zip)。解压后保留完整技能文件夹。使用 LuluLab 网站内置画布时，可直接在画布里选择技能。仅支持画布的技能依赖 LuluLab 画布工具。
+按需下载单个 ZIP。解压后保留完整技能文件夹。使用 LuluLab 网站内置画布时，可直接在画布里选择技能。仅支持画布的技能依赖 LuluLab 画布工具。
 
 需要接入 API 时，请登录 [LuluLab API Keys 页面](https://www.lululab.ai/workshop/keys) 获取 Key。画布和浏览器流程使用 LuluLab 网站账号。
 
