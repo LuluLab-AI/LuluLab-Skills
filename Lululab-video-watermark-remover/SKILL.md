@@ -3,7 +3,7 @@ name: Lululab-video-watermark-remover
 slug: lululab-video-watermark-remover
 version: 1.0.0
 displayName: LuluLab 去除水印
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-video-watermark-remover
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-video-watermark-remover
 description: 用 LuluLab 批量检测并擦除视频画面里的文字水印。适用于清理用户提供的或获准编辑的视频，并下载去水印结果。
 ---
 

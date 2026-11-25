@@ -3,7 +3,7 @@ name: Lululab-video-subtitle-remover
 slug: lululab-video-subtitle-remover
 version: 1.0.0
 displayName: LuluLab 去除字幕
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-video-subtitle-remover
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-video-subtitle-remover
 description: 用 LuluLab 擦除已经烧录在视频画面上的字幕。支持智能识别、框选字幕区域和批量处理。适用于需要去除已有硬字幕并下载处理后视频的请求。
 ---
 

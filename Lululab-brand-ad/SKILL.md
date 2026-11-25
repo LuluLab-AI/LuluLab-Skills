@@ -3,7 +3,7 @@ name: Lululab-brand-ad
 slug: lululab-brand-ad
 version: 1.0.0
 displayName: LuluLab 品牌广告
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-brand-ad
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-brand-ad
 description: Create a short brand ad from campaign messaging, audience and brand assets.
 compatibility: Requires the LuluLab canvas agent and its media generation tools.
 metadata:

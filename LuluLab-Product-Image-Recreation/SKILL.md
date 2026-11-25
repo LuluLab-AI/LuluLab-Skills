@@ -3,7 +3,7 @@ name: LuluLab-Product-Image-Recreation
 slug: lululab-product-image-recreation
 version: 1.0.0
 displayName: LuluLab 商品图复刻
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/LuluLab-Product-Image-Recreation
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/LuluLab-Product-Image-Recreation
 description: 用 LuluLab 商品图复刻工作台，以用户自己的商品图替换参考版式中的产品并生成电商图片。适用于有现成构图、配色或文案布局参考的商品主图、功能特写和使用场景图。
 ---
 

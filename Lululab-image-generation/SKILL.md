@@ -3,7 +3,7 @@ name: Lululab-image-generation
 slug: lululab-image-generation
 version: 1.0.0
 displayName: LuluLab 图片生成
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-image-generation
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-image-generation
 description: Create an image node from a brief and references
 metadata:
   host: LuluLab canvas

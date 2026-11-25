@@ -3,7 +3,7 @@ name: Lululab-video-enhance
 slug: lululab-video-enhance
 version: 1.0.0
 displayName: LuluLab 提升画质
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-video-enhance
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-video-enhance
 description: 用 LuluLab 提升已有视频的分辨率和清晰度，按需补帧到 30 或 60 FPS。适用于视频超分、画质修复或输出更高清版本的请求。
 ---
 

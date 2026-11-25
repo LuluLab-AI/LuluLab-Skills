@@ -3,7 +3,7 @@ name: Lululab-video-generation
 slug: lululab-video-generation
 version: 1.0.0
 displayName: LuluLab 视频生成
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-video-generation
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-video-generation
 description: Create a video node from a brief and references
 metadata:
   host: LuluLab canvas

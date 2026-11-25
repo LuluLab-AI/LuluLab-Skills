@@ -3,7 +3,7 @@ name: Lululab-local-store
 slug: lululab-local-store
 version: 1.0.0
 displayName: LuluLab 同城到店
-homepage: https://github.com/LuluLab-AI/LuluLab-Canvas-Skills/tree/main/Lululab-local-store
+homepage: https://github.com/LuluLab-AI/LuluLab-Skills/tree/main/Lululab-local-store
 description: Turn a storefront, signature offering or in-store experience into a short video for nearby customers.
 compatibility: Requires the LuluLab canvas agent and its media generation tools.
 metadata:
